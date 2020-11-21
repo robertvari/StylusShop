@@ -19,6 +19,7 @@
   width: 100%;
   border: 1px solid black;
   position: relative;
+  overflow: hidden;
 
   .image-frame{
     position: absolute;
@@ -27,6 +28,9 @@
     background-position: center;
     background-size: cover;
     display: flex;
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: all 1s;
 
     h1{
       background-color: rgba(0,0,0,0.3);
@@ -34,6 +38,18 @@
       font-size: 60px;
       color: white;
       padding: 20px;
+      transition: all 1.5s;
+
+      transform: translateX(-100px);
     }
+
+    .active{
+      transform: translateX(0);
+    }
+  }
+
+  .active{
+    opacity: 1;
+    transform: translateX(0);
   }
 }

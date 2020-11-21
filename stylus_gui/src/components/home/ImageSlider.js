@@ -3,6 +3,7 @@ import axios from "axios";
 
 function ImageSlider(props) {
     const [items, set_items] = useState([])
+    const [counter, set_counter] = useState(0)
 
     const fetch_items = () => {
         axios({
@@ -17,12 +18,22 @@ function ImageSlider(props) {
         fetch_items()
     }, [])
 
+    useEffect(() => {
+        setTimeout(() =>{
+            if( counter === items.length -1){
+                set_counter(0)
+            }else{
+                set_counter(counter + 1)
+            }
+        }, 10000)
+    }, [counter])
+
     return (
         <div className="image-slider-container">
             {
                 items.map((item, index) =>
-                    <div className="image-frame" style={{backgroundImage: `url(${item.image})`}}>
-                        <h1>{item.message}</h1>
+                    <div className={`image-frame ${index === counter? 'active':''}`} style={{backgroundImage: `url(${item.image})`}}>
+                        <h1 className={`${index === counter? 'active':''}`}>{item.message}</h1>
                     </div>
                 )
             }
