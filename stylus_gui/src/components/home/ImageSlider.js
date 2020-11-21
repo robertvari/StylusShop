@@ -2,7 +2,9 @@ import React from 'react';
 
 function ImageSlider(props) {
     return (
-        <div>Image Show</div>
+        <div className="image-slider-container">
+            Image Show
+        </div>
     );
 }
 
