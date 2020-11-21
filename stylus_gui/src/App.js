@@ -1,9 +1,16 @@
 import "./styles/App.scss"
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Shop from "./components/Shop";
+import Contact from "./components/Contact";
 
 function App() {
   return (
     <div>
-      <h1>Stylus Shop</h1>
+      <Navbar/>
+      <Home/>
+      <Shop/>
+      <Contact/>
     </div>
   );
 }
