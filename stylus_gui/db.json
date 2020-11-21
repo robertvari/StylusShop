@@ -1,0 +1,213 @@
+{
+  "home": [
+    {
+      "id": 0,
+      "title": "THE NEW EOS R6",
+      "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "image": "https://i1.adis.ws/i/canon/EOS-r6_24_105mm_angled_for_HP_B_1600x900_hero-e90fc35b-be19-11ea-8c65-8c04ba195b5f?w=1200&sm=aspect&aspect=4:3&qlt=70&fmt=jpg&fmt.options=interlaced&fmt=jpg&fmt.options=interlaced&bg=rgb(236,237,237)"
+    },
+    {
+      "id": 1,
+      "title": "Canon RF 50mm F1.8 STM",
+      "body": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "image": "https://i1.adis.ws/i/canon/hero_810x475_7e71ad32-0186-11eb-86e3-b083fe5a86f5_7e71ad2c-0186-11eb-86f1-b083fe5a86f5?w=600&fmt=webp&bg=rgb(255,255,255)"
+    },
+    {
+      "id": 2,
+      "title": "Canon 4K Cameras",
+      "body": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
+      "image": "https://i1.adis.ws/i/canon/canon_4k_cameras-2?w=100%&sm=aspect&aspect=4:1&qlt=80"
+    },
+    {
+      "id": 3,
+      "title": "PowerShot G7 X Mark III",
+      "body": "Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.",
+      "image": "https://i1.adis.ws/i/canon/canon_powershot_g7_x_mark_iii_pocket?w=1200&sm=aspect&aspect=16:9&qlt=70&fmt=jpg&fmt.options=interlaced"
+    },
+    {
+      "id": 4,
+      "title": "The New Canon EOS C70",
+      "body": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+      "image": "https://i1.adis.ws/i/canon/eos-c70-lifestyle-0025_hero-module_pdp_9bbf1de1ead54a6692eb0f387725f7fe?$block-hero-header-3by2-dt-jpg$"
+    }
+  ],
+  "slideshow": [
+    {
+      "image": "https://source.unsplash.com/1600x900/?people0",
+      "message": "Próbálja ki az új Canon gépeket!"
+    },
+    {
+      "image": "https://source.unsplash.com/1600x900/?people1",
+      "message": "A nyár egy pillanatban"
+    },
+    {
+      "image": "https://source.unsplash.com/1600x900/?people2",
+      "message": "A színek új dimenziója"
+    },
+    {
+      "image": "https://source.unsplash.com/1600x900/?people3",
+      "message": "Nagyításban a minőség"
+    }
+  ],
+  "shop": [
+    {
+      "id": 0,
+      "title": "Canon EOS 4000D DSLR",
+      "category": 0,
+      "image": "https://s13emagst.akamaized.net/products/17019/17018919/images/res_cb1be15f78492865ffc628c8110776c3.jpg?width=200&height=200&hash=B4F254F07E721AA98600AE502E994FEA",
+      "price": 118990,
+      "in_stock": true,
+      "discont": false
+    },
+    {
+      "id": 1,
+      "title": "Canon EOS 800D DSLR",
+      "category": 0,
+      "image": "https://s13emagst.akamaized.net/products/5399/5398685/images/res_2b7480cb4f5a0c5e024fb0fe9582d0c8.jpg?width=200&height=200&hash=E902E90BB9E8C5756AB3994A1458A832",
+      "price": 219999,
+      "in_stock": true,
+      "discont": false
+    },
+    {
+      "id": 2,
+      "title": "Canon EOS 2000D",
+      "category": 0,
+      "image": "https://s13emagst.akamaized.net/products/16428/16427052/images/res_01b40c035e7e76da84d508e57352d352.jpg?width=200&height=200&hash=4A3B0EE6E41129506DD85C49A1C3CEBF",
+      "price": 109990,
+      "in_stock": false,
+      "discont": 99990
+    },
+    {
+      "id": 3,
+      "title": "Canon EOS M50 ",
+      "category": 0,
+      "image": "https://s13emagst.akamaized.net/products/14771/14770611/images/res_be02a6acb7dd457e38aad49b99dd4753.jpg?width=200&height=200&hash=927F90CEDCE99D26C15E681A74472E21",
+      "price": 219990,
+      "in_stock": false,
+      "discont": 209990
+    },
+    {
+      "id": 4,
+      "title": "Canon EF 50mm f/1.8 STM",
+      "category": 1,
+      "image": "https://s13emagst.akamaized.net/products/4051/4050065/images/res_4d3dad59bd06899876c75bc7cd55d777.jpg?width=200&height=200&hash=9A88B66D76DDD261428D4B80700CD19A",
+      "price": 42990,
+      "in_stock": true,
+      "discont": 41990
+    },
+    {
+      "id": 5,
+      "title": "Canon EF 70-200mm f/4.0 L USM",
+      "category": 1,
+      "image": "https://s13emagst.akamaized.net/products/1/188/images/img46289_23052013114032_0.jpg?width=200&height=200&hash=C548305299A06BA54BD2F1912E5F19A5",
+      "price": 209900,
+      "in_stock": false,
+      "discont": false
+    },
+    {
+      "id": 6,
+      "title": "Canon 10-18/4.5-5.6 IS STM EF-S",
+      "category": 1,
+      "image": "https://s13emagst.akamaized.net/products/31252/31251051/images/res_a0d7fbc76fb343748e2c71dd7f0d40dc.jpg?width=200&height=200&hash=0BCEBE780B8DD89BC2423AC2E036477A",
+      "price": 87990,
+      "in_stock": true,
+      "discont": false
+    },
+    {
+      "id": 7,
+      "title": "Canon EC809 USB adapter",
+      "category": 2,
+      "image": "https://s13emagst.akamaized.net/products/16942/16941662/images/res_49a9ecab1b6e2f68e2d84615e3fd0511.jpeg?width=200&height=200&hash=77451486917AB3F2AE182661476EAD3D",
+      "price": 40900,
+      "in_stock": true,
+      "discont": false
+    },
+    {
+      "id": 8,
+      "title": "Canon LH-DC80 napellenző",
+      "category": 2,
+      "image": "https://s13emagst.akamaized.net/products/17505/17504393/images/res_9c46d737364bbe109e556ec83ef627ed.jpg?width=200&height=200&hash=7B23B9680794DF2F34B2F2016D9F3FDC",
+      "price": 8990,
+      "in_stock": true,
+      "discont": false
+    },
+    {
+      "id": 9,
+      "title": "Canon EOS 4000D váz + EF-S 18-55mm",
+      "category": 0,
+      "image": "https://s13emagst.akamaized.net/products/19036/19035347/images/res_f1c33c337606d77ed02ac9f106e6a1cb.jpg?width=200&height=200&hash=9E4974322FCFEA264D71638657E03221",
+      "price": 116081,
+      "in_stock": true,
+      "discont": 173902
+    },
+    {
+      "id": 10,
+      "title": "Canon EF-S 18-135mm",
+      "category": 1,
+      "image": "https://s13emagst.akamaized.net/products/1267/1266579/images/res_215b5ca3fd5eef45f32c901b69ea8d51.jpg?width=200&height=200&hash=E30E2F6D8AF650EB7537007BCBEB6BC5",
+      "price": 253876,
+      "in_stock": true,
+      "discont": false
+    },
+    {
+      "id": 11,
+      "title": "Canon EOS M200 Tükör nélküli fényképezőgép",
+      "category": 0,
+      "image": "https://s13emagst.akamaized.net/products/25881/25880180/images/res_c5e8e125065bed0e5912f42d7960e59e.jpg?width=200&height=200&hash=38199E6F6D07670AAD126B852725C72F",
+      "price": 299990,
+      "in_stock": true,
+      "discont": 355900
+    },
+    {
+      "id": 12,
+      "title": "Canon NB-6LH akkumulátor",
+      "category": 2,
+      "image": "https://s13emagst.akamaized.net/products/1483/1482247/images/res_458197b06ab1e76fa8b117cd17e52def.jpg?width=200&height=200&hash=6428314CCE341CBAA73F7CE877848ED0",
+      "price": 17170,
+      "in_stock": false,
+      "discont": false
+    },
+    {
+      "id": 13,
+      "title": "6db-os Savvies SU75 kristálytiszta fólia",
+      "category": 2,
+      "image": "https://s13emagst.akamaized.net/products/27905/27904449/images/res_60542eb6da4579f6c3ecd9432a89facc.jpg?width=200&height=200&hash=D089980B758FE840997978EE3A80DD00",
+      "price": 4220,
+      "in_stock": false,
+      "discont": 4290
+    },
+    {
+      "id": 14,
+      "title": "Canon WP-DC28 PowerShot G10 Vízálló tok",
+      "category": 2,
+      "image": "https://s13emagst.akamaized.net/products/15062/15061246/images/res_f0098c7e303edc004b799ee8a741b7fe.jpg?width=200&height=200&hash=7EF148DBE42AAA473365CDC227FC9785",
+      "price": 28120,
+      "in_stock": false,
+      "discont": false
+    },
+    {
+      "id": 15,
+      "title": "Canon CB-MS12 fotós táska",
+      "category": 2,
+      "image": "https://s13emagst.akamaized.net/products/4618/4617235/images/res_2b2868dbff02eddfbaf4e1d6830581f8.jpg?width=200&height=200&hash=17EA9CC3CE481B656E35CFADF3B0BF95",
+      "price": 68330,
+      "in_stock": false,
+      "discont": false
+    }
+  ],
+  "categories": [
+    {
+      "id": 0,
+      "name": "Kamerák"
+    },
+    {
+      "id": 1,
+      "name": "Objektívek"
+    },
+    {
+      "id": 2,
+      "name": "Kiegészítők"
+    }
+  ],
+  "cart": []
+}
