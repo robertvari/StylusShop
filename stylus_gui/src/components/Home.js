@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios"
+import ImageSlider from "./home/ImageSlider";
+import PostCard from "./home/PostCard";
 
 function Home(props) {
     const [posts, set_posts] = useState([])
@@ -19,8 +21,10 @@ function Home(props) {
 
     return (
         <div>
+            <ImageSlider/>
+
             {
-              posts.map(item => <h1>{item.title}</h1>)
+              posts.map(data => <PostCard key={data.id} data={data}/>)
             }
         </div>
     );
