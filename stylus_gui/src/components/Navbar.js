@@ -13,7 +13,11 @@ function Navbar(props) {
             <div className="nav-button-layout">
                 <i className="fas fa-search nav-button"/>
                 <i className="fas fa-shopping-cart nav-button"/>
-                <i className="fas fa-user nav-button"/>
+
+                <Link to="/login">
+                    <i className="fas fa-user nav-button"/>
+                </Link>
+
             </div>
         </div>
     );
