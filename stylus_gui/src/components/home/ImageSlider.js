@@ -21,8 +21,8 @@ function ImageSlider(props) {
         <div className="image-slider-container">
             {
                 items.map((item, index) =>
-                    <div style={{backgroundImage: `url(${item.image})`}}>
-                        {item.message}
+                    <div className="image-frame" style={{backgroundImage: `url(${item.image})`}}>
+                        <h1>{item.message}</h1>
                     </div>
                 )
             }
