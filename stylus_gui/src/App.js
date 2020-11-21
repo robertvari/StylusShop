@@ -1,3 +1,9 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
 import "./styles/App.scss"
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -6,12 +12,17 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div>
+    <Router>
       <Navbar/>
-      <Home/>
-      <Shop/>
-      <Contact/>
-    </div>
+
+      <Switch>
+          <Route path="/contact" component={Contact}/>
+          <Route path="/shop" component={Shop}/>
+
+          <Route path="/" component={Home}/>
+      </Switch>
+
+    </Router>
   );
 }
 
