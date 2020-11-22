@@ -3,6 +3,16 @@ import Categories from "./shop/Categories";
 import ItemCard from "./shop/ItemCard";
 import axios from "axios";
 
+function Checkbox({value, title}) {
+
+    return (
+        <div className="filter-item">
+            <input type="checkbox" id={value} name={value} value={value}/>
+            <label htmlFor={value}> {title}</label>
+        </div>
+    )
+}
+
 
 function Shop(props) {
     const [items, set_items] = useState([])
@@ -29,7 +39,13 @@ function Shop(props) {
             <div className="shop-container">
 
                 <div className="filter-layout">
-                    filters...
+
+                    <div className="filter-card">
+                        <h4>Elérhetőség</h4>
+                        <Checkbox value="raktaron" title="Raktáron"/>
+                        <Checkbox value="akcios" title="Akciós"/>
+                    </div>
+
                 </div>
 
                 <div className="shop-grid">
