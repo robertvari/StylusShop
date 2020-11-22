@@ -10,6 +10,8 @@ import Home from "./components/Home";
 import Shop from "./components/Shop";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
+import PasswordReset from "./components/PasswordReset";
+import Registration from "./components/Registration";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/contact" component={Contact}/>
           <Route path="/shop" component={Shop}/>
           <Route path="/login" component={Login}/>
+          <Route path="/password_reset" component={PasswordReset}/>
+          <Route path="/registration" component={Registration}/>
 
           <Route path="/" component={Home}/>
         </Switch>
