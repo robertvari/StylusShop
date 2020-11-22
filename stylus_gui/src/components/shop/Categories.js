@@ -19,9 +19,9 @@ function Categories(props) {
     }, [])
 
     return (
-        <div>
+        <div className="categories-container">
             {
-                categories.map(category => <div>{category.name}</div>)
+                categories.map(category => <div className="nav-button">{category.name}</div>)
             }
         </div>
     );

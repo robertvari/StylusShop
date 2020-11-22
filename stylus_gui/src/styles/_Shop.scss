@@ -1,0 +1,27 @@
+.categories-container{
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #d2d2d2;
+  margin-bottom: 10px;
+
+  .nav-button {
+    padding: 10px;
+
+    &:hover{
+      background-color: #e9ebee;
+      color: black;
+    }
+  }
+}
+
+.shop-container{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 200px auto;
+}
+
+.shop-grid{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
