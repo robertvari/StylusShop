@@ -1,8 +1,23 @@
 import React from 'react';
+import Categories from "./shop/Categories";
 
 function Shop(props) {
     return (
-        <h1>Shop</h1>
+        <div>
+            <Categories/>
+
+            <div className="shop-container">
+
+                <div className="filter-layout">
+                    filters...
+                </div>
+
+                <div className="shop-grid">
+                    items...
+                </div>
+            </div>
+
+        </div>
     );
 }
 

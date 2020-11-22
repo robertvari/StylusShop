@@ -4,11 +4,12 @@ import axios from "axios";
 function ImageSlider(props) {
     const [items, set_items] = useState([])
     const [counter, set_counter] = useState(0)
+    const API_URL = process.env.REACT_APP_API_URL
 
     const fetch_items = () => {
         axios({
             method: "get",
-            url: "http://localhost:3001/slideshow"
+            url: `${API_URL}/slideshow`
         })
             .then(res => set_items(res.data))
             .catch(err => console.log(err))

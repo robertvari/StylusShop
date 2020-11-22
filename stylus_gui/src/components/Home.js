@@ -5,11 +5,12 @@ import PostCard from "./home/PostCard";
 
 function Home(props) {
     const [posts, set_posts] = useState([])
+    const API_URL = process.env.REACT_APP_API_URL
 
     const fetch_items = () => {
         axios({
             method: "get",
-            url: "http://localhost:3001/home"
+            url: `${API_URL}/home`
         })
             .then(res => set_posts(res.data))
             .catch(err => console.log(err))
