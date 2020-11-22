@@ -1,6 +1,7 @@
 @import "Navbar";
 @import "Home";
 @import "Shop";
+@import "Contact";
 
 *{
   margin: 0;
@@ -29,4 +30,25 @@ h3, h4{
   padding-top: 50px;
   margin: 0 auto;
   max-width: 1200px;
+}
+
+button{
+  align-self: flex-end;
+  border: none;
+  cursor: pointer;
+  padding: 5px 20px;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s;
+
+  &:hover{
+    background-color: black;
+    color: white;
+  }
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #dedede;
+  margin: 10px 30px;
 }
