@@ -1,9 +1,29 @@
-import React from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {Intcomma} from "../../utilities";
+import {ShoppingCartContext} from "../contexts/ShoppingCart";
 
 
 function ItemCard(props) {
-    const {title, image, price, discont, in_stock} = props.data
+    const {title, image, price, discont, in_stock, id} = props.data
+    const {shopping_list, set_shopping_list} = useContext(ShoppingCartContext)
+    const [in_cart, set_in_cart] = useState(false)
+
+    const add_to_cart = () => {
+        set_shopping_list([...shopping_list, props.data])
+    }
+
+    const check_in_cart = () => {
+        const filtered_cart = shopping_list.filter(item => item.id === id)
+        if(filtered_cart.length > 0){
+            set_in_cart(true)
+        }else{
+            set_in_cart(false)
+        }
+    }
+
+    useEffect(() =>{
+        check_in_cart()
+    }, [shopping_list])
 
     return (
         <div className="shop-item-card">
@@ -26,10 +46,15 @@ function ItemCard(props) {
                 <h2>{Intcomma(price)} Ft</h2>
             </div>
 
-            <button>
-                <i className="fas fa-cart-arrow-down"/>
-                Kosárba!
-            </button>
+            {
+                in_cart?
+                    <div className="in_cart">Kosárban</div>
+                    :
+                <button onClick={add_to_cart}>
+                    <i className="fas fa-cart-arrow-down"/>
+                    Kosárba!
+                </button>
+            }
 
         </div>
     );

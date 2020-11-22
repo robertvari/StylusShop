@@ -42,6 +42,16 @@
   border-radius: 5px;
   overflow: hidden;
 
+  .in_cart {
+    background-color: #81d463;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    color: white;
+  }
+
   .price-container {
     display: flex;
     flex-direction: column;

@@ -13,25 +13,30 @@ import Login from "./components/Login";
 import PasswordReset from "./components/PasswordReset";
 import Registration from "./components/Registration";
 
+import {ShoppingCartProvider} from "./components/contexts/ShoppingCart";
+
 function App() {
   return (
-    <Router>
-      <Navbar/>
+        <Router>
 
-      <div className="page-content-container">
-        <Switch>
-          <Route path="/contact" component={Contact}/>
-          <Route path="/shop" component={Shop}/>
-          <Route path="/login" component={Login}/>
-          <Route path="/password_reset" component={PasswordReset}/>
-          <Route path="/registration" component={Registration}/>
+            <ShoppingCartProvider>
 
-          <Route path="/" component={Home}/>
-        </Switch>
-      </div>
+                <Navbar/>
 
+                <div className="page-content-container">
+                <Switch>
+                  <Route path="/contact" component={Contact}/>
+                  <Route path="/shop" component={Shop}/>
+                  <Route path="/login" component={Login}/>
+                  <Route path="/password_reset" component={PasswordReset}/>
+                  <Route path="/registration" component={Registration}/>
 
-    </Router>
+                  <Route path="/" component={Home}/>
+                </Switch>
+                </div>
+            </ShoppingCartProvider>
+
+        </Router>
   );
 }
 
