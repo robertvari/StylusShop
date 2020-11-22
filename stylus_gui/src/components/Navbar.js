@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import ShoppingCart from "./shop/ShoppingCart";
 
 function Navbar(props) {
     return (
@@ -12,7 +13,8 @@ function Navbar(props) {
 
             <div className="nav-button-layout">
                 <i className="fas fa-search nav-button"/>
-                <i className="fas fa-shopping-cart nav-button"/>
+
+                <ShoppingCart/>
 
                 <Link to="/login">
                     <i className="fas fa-user nav-button"/>
