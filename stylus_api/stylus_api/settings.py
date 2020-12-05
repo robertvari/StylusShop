@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
+
+    'users.apps.UsersConfig',
 ]
+
+AUTH_USER_MODEL = "users.StylusUser"
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
