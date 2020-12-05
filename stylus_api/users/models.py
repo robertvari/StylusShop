@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
 from django.utils.text import slugify
-from django.db.models.signals import pre_save
+from django.db.models.signals import pre_save, post_save
 from django.dispatch import receiver
 import time
 
@@ -76,3 +76,15 @@ def create_username(sender, instance, **kwargs):
 
         if StylusUser.objects.filter(username=username).exists():
             username = f"{username}-{int(time.time())}"
+
+
+@receiver(post_save, sender=StylusUser)
+def create_profile(sender, instance, **kwargs):
+    if kwargs["created"]:
+        Profile.objects.create(user=instance)
+
+
+@receiver(pre_save, sender=Profile)
+def slug_generator(sender, instance, **kwargs):
+    if not instance.slug:
+        instance.slug = instance.user.username
