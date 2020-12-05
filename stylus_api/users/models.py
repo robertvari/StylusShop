@@ -30,8 +30,9 @@ class StylusUserManager(BaseUserManager):
 
         return user
 
-    def create_superuser(self):
-        pass
+    def create_superuser(self, email, password):
+        user = self.create_user(email, password, superuser=True)
+        return user
 
 
 class StylusUser(AbstractBaseUser, PermissionsMixin):
