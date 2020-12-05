@@ -52,6 +52,23 @@ class StylusUser(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
+class Profile(models.Model):
+    user = models.OneToOneField(StylusUser, on_delete=models.CASCADE, related_name="profile")
+    slug = models.SlugField(unique=True, blank=True)
+
+    first_name = models.CharField(max_length=200, blank=True)
+    last_name = models.CharField(max_length=200, blank=True)
+
+    # webshop data fields
+    zipcode = models.CharField(max_length=200, blank=True)
+    city = models.CharField(max_length=200, blank=True)
+    address = models.CharField(max_length=200, blank=True)
+    phone = models.CharField(max_length=200, blank=True)
+
+    def __str__(self):
+        return self.user.email
+
+
 @receiver(pre_save, sender=StylusUser)
 def create_username(sender, instance, **kwargs):
     if not instance.username:
