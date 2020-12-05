@@ -77,6 +77,8 @@ def create_username(sender, instance, **kwargs):
         if StylusUser.objects.filter(username=username).exists():
             username = f"{username}-{int(time.time())}"
 
+        instance.username = username
+
 
 @receiver(post_save, sender=StylusUser)
 def create_profile(sender, instance, **kwargs):
