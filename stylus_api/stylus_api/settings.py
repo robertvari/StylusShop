@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'users.apps.UsersConfig',
+    'shop.apps.ShopConfig'
 ]
 
 SITE_ID = 1
