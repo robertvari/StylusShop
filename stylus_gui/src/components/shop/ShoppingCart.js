@@ -4,13 +4,13 @@ import {Intcomma} from "../../utilities";
 import {Link} from "react-router-dom";
 
 function CartItem (props) {
-    const {title, price, id} = props.data
+    const {title, price, discount_price, id} = props.data
 
     return(
         <small className="cart-item">
             <p>{title}</p>
 
-            <p>{Intcomma(price)} Ft <i className="fas fa-trash-alt" onClick={() => props.delete_item(id)}/></p>
+            <p>{discount_price? Intcomma(discount_price):Intcomma(price)} Ft <i className="fas fa-trash-alt" onClick={() => props.delete_item(id)}/></p>
 
         </small>
     )
@@ -46,7 +46,11 @@ function ShoppingCart(props) {
 
         for(let i=0; i < shopping_list.length; i++){
             const current_item = shopping_list[i]
-            current_total = current_total + current_item.price
+            if(current_item.discount_price){
+                current_total = current_total + current_item.discount_price
+            }else{
+                current_total = current_total + current_item.price
+            }
         }
 
         set_total(current_total)
