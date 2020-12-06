@@ -38,6 +38,7 @@ function ShoppingCart(props) {
 
     const delete_item = (id) =>{
         const new_list = shopping_list.filter(item => item.id !== id)
+        localStorage.setItem("shopping_list", JSON.stringify(new_list))
         set_shopping_list(new_list)
     }
 
@@ -54,11 +55,6 @@ function ShoppingCart(props) {
         }
 
         set_total(current_total)
-    }
-
-    const go_to_casa = () =>{
-        set_visible(false)
-        props.history.push("casa/")
     }
 
     useEffect(() =>{

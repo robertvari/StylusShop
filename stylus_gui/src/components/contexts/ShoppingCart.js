@@ -6,15 +6,10 @@ export const ShoppingCartProvider = (props) => {
     const [shopping_list, set_shopping_list] = useState([])
 
     useEffect(() => {
-        if(shopping_list.length > 0){
-            const new_cart_list = JSON.stringify(shopping_list)
-            localStorage.setItem("shopping_list", new_cart_list)
-        }
-    }, [shopping_list])
-
-    useEffect(() => {
         const old_cart_list = localStorage.getItem("shopping_list")
-        set_shopping_list(JSON.parse(old_cart_list))
+        if(old_cart_list){
+            set_shopping_list(JSON.parse(old_cart_list))
+        }
     }, [])
 
     return (
