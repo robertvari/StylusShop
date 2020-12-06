@@ -1,10 +1,10 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext, useState, useEffect, Fragment} from 'react';
 import {Intcomma} from "../../utilities";
 import {ShoppingCartContext} from "../contexts/ShoppingCart";
 
 
 function ItemCard(props) {
-    const {title, image, price, discont, in_stock, id} = props.data
+    const {title, card_image, price, discount_price, in_stock, short_description, id} = props.data
     const {shopping_list, set_shopping_list} = useContext(ShoppingCartContext)
     const [in_cart, set_in_cart] = useState(false)
 
@@ -28,9 +28,13 @@ function ItemCard(props) {
     return (
         <div className="shop-item-card">
             <div>
-                <img src={image} alt=""/>
+                <img src={card_image} alt=""/>
                 <h4>{title}</h4>
             </div>
+
+            <small>
+                {short_description}
+            </small>
 
             <div>
                 {
@@ -42,8 +46,14 @@ function ItemCard(props) {
             </div>
 
             <div className="price-container">
-                {discont&& <small className="discount-price">{Intcomma(discont)} Ft</small>}
-                <h2>{Intcomma(price)} Ft</h2>
+                {discount_price?
+                    <Fragment>
+                        <small className="discount-price">{Intcomma(price)} Ft</small>
+                        <h2>{Intcomma(discount_price)} Ft</h2>
+                    </Fragment>
+                    :
+                    <h2>{Intcomma(price)} Ft</h2>
+                }
             </div>
 
             {

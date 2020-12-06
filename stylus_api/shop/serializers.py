@@ -18,6 +18,7 @@ class ShopItemCardSerializer(serializers.ModelSerializer):
         fields = [
             "id",
             "title",
+            "short_description",
             "card_image",
             "card_title",
             "price",

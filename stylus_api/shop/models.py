@@ -28,7 +28,7 @@ class ShopItem(models.Model):
     card_image = models.ImageField(upload_to=image_dir_path)
     card_title = models.CharField(max_length=200, blank=True)
     price = models.IntegerField()
-    discount_price = models.IntegerField()
+    discount_price = models.IntegerField(null=True, blank=True)
 
     in_stock = models.IntegerField(default=1)
 

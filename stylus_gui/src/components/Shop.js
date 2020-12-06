@@ -21,7 +21,7 @@ function Shop(props) {
     const fetch_items = () => {
         axios({
             method: "get",
-            url: `${API_URL}/shop`
+            url: `${API_URL}shop/`
         })
             .then(res => set_items(res.data))
             .catch(err => console.log(err))
