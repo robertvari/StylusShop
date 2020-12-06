@@ -10,3 +10,17 @@ class PromotedSerializer(serializers.ModelSerializer):
             "promotion_image",
             "promotion_title"
         ]
+
+
+class ShopItemCardSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ShopItem
+        fields = [
+            "id",
+            "title",
+            "card_image",
+            "card_title",
+            "price",
+            "discount_price",
+            "in_stock",
+        ]

@@ -2,8 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 
-from .models import ShopItem
-from .serializers import PromotedSerializer
+from .models import ShopItem, Category
+from .serializers import PromotedSerializer, ShopItemCardSerializer
 
 
 class PromotedView(APIView):
@@ -15,8 +15,19 @@ class PromotedView(APIView):
         return Response(serializer.data)
 
 
+class CategoriesView(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        return Response(
+            [{"id": i.pk, "name": i.name} for i in Category.objects.all()]
+        )
+
+
 class ShopItemList(APIView):
     permission_classes = [AllowAny]
 
     def get(self, request):
-        return Response("This is the shop item list")
+        shop_items = ShopItem.objects.all()
+        serializer = ShopItemCardSerializer(shop_items, many=True, context={"request": request})
+        return Response(serializer.data)

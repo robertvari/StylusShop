@@ -8,7 +8,7 @@ function Categories(props) {
     const fetch_items = () => {
         axios({
             method: "get",
-            url: `${API_URL}/categories`
+            url: `${API_URL}shop/categories/`
         })
             .then(res => set_categories(res.data))
             .catch(err => console.log(err))
