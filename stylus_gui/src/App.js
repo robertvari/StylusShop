@@ -28,7 +28,7 @@ function App() {
                 <Switch>
                   <Route path="/contact" component={Contact}/>
                   <Route path="/shop" component={Shop}/>
-                  <Route path="/cassa" component={Cassa}/>
+                  <Route path="/casa" component={Cassa}/>
                   <Route path="/login" component={Login}/>
                   <Route path="/password_reset" component={PasswordReset}/>
                   <Route path="/registration" component={Registration}/>
