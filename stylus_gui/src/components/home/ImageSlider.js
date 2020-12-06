@@ -9,7 +9,7 @@ function ImageSlider(props) {
     const fetch_items = () => {
         axios({
             method: "get",
-            url: `${API_URL}/slideshow`
+            url: `${API_URL}shop/promoted/`
         })
             .then(res => set_items(res.data))
             .catch(err => console.log(err))
@@ -33,8 +33,8 @@ function ImageSlider(props) {
         <div className="image-slider-container">
             {
                 items.map((item, index) =>
-                    <div className={`image-frame ${index === counter? 'active':''}`} style={{backgroundImage: `url(${item.image})`}}>
-                        <h1 className={`${index === counter? 'active':''}`}>{item.message}</h1>
+                    <div className={`image-frame ${index === counter? 'active':''}`} style={{backgroundImage: `url(${item.promotion_image})`}}>
+                        <h2 className={`${index === counter? 'active':''}`}>{item.promotion_title}</h2>
                     </div>
                 )
             }
