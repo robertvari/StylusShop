@@ -1,9 +1,12 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
-
 from .models import ShopItem, Category
 from .serializers import PromotedSerializer, ShopItemCardSerializer
+from django.conf import settings
+
+import stripe
+stripe.api_key = settings.STRIPE_API_KEY
 
 
 class PromotedView(APIView):
@@ -31,3 +34,19 @@ class ShopItemList(APIView):
         shop_items = ShopItem.objects.all()
         serializer = ShopItemCardSerializer(shop_items, many=True, context={"request": request})
         return Response(serializer.data)
+
+
+class OrderView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        price = 200
+
+        payment_intent = stripe.PaymentIntent.create(
+            amount=price * 100,
+            currency="huf",
+            payment_method_types=["card"],
+            receipt_email="test@example.com"
+        )
+
+        return Response(payment_intent)
