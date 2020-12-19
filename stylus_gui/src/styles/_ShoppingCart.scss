@@ -34,19 +34,46 @@
       width: 400px;
       background-color: white;
       box-shadow: 0 1px 5px -1px rgba(0,0,0,.5);
-      padding: 10px;
       display: flex;
       flex-direction: column;
       border-radius: 5px;
+      overflow: hidden;
+
+      .header {
+        background-color: #e9c46a;
+        padding: 10px;
+      }
+
+      .total {
+        color: #e92d24;
+        align-self: center;
+        margin: 10px 0;
+        font-weight: 500;
+      }
 
       .cart-item {
         display: flex;
         justify-content: space-between;
+        margin: 0 20px;
+
+        i {
+          cursor: pointer;
+          color: #e92d24;
+          opacity: 0;
+          transition: all 0.3s;
+        }
+
+        &:hover{
+          i {
+            opacity: 1;
+          }
+        }
       }
 
       .buttons-layout{
         display: flex;
         justify-content: space-between;
+        margin: 10px
       }
     }
   }

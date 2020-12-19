@@ -67,7 +67,7 @@ function ShoppingCart(props) {
 
             <div className={`cart_popup_container ${visible? "active":""}`}>
                 <div className="cart-items-container">
-                    <h2>Kosár</h2>
+                    <h2 className="header">Kosár</h2>
                     <hr/>
 
                     {
@@ -76,7 +76,7 @@ function ShoppingCart(props) {
 
                     <hr/>
 
-                    <h3 style={{color: "red"}}>Összesen: {Intcomma(total)} Ft</h3>
+                    <h3 className="total">Összesen: {Intcomma(total)} Ft</h3>
 
                     <div className="buttons-layout">
                         <button onClick={() => set_visible(false)}>
