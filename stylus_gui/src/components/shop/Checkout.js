@@ -34,7 +34,13 @@ function CheckoutItem({data}){
     return (
         <div className="checkout-item-container">
             <div>{data.title}</div>
-            <div>{Intcomma(data.price)} Ft</div>
+
+            {
+                data.discount_price?
+                    <div><small className="discount-price">{Intcomma(data.price)} Ft</small> {Intcomma(data.discount_price)} Ft</div>
+                    :
+                    <div>{Intcomma(data.price)} Ft</div>
+            }
 
             <Quantity quantity={quantity} set_quantity={set_quantity}/>
         </div>

@@ -58,11 +58,6 @@
     align-items: center;
   }
 
-  .discount-price{
-    color: #b1b1b1;
-    text-decoration: line-through;
-  }
-
   img {
     width: 100%;
   }
@@ -96,6 +91,11 @@
       background-color: #fca311;
     }
   }
+}
+
+.discount-price{
+  color: #b1b1b1;
+  text-decoration: line-through;
 }
 
 .filter-card {

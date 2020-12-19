@@ -44,13 +44,6 @@
         padding: 10px;
       }
 
-      .total {
-        color: #e92d24;
-        align-self: center;
-        margin: 10px 0;
-        font-weight: 500;
-      }
-
       .cart-item {
         display: flex;
         justify-content: space-between;
@@ -81,4 +74,11 @@
   .active {
     display: flex;
   }
+}
+
+.total {
+  color: #e92d24;
+  align-self: center;
+  margin: 10px 0;
+  font-weight: 500;
 }

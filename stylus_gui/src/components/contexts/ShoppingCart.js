@@ -12,9 +12,9 @@ export const ShoppingCartProvider = (props) => {
         for(let i=0; i < shopping_list.length; i++){
             const current_item = shopping_list[i]
             if(current_item.discount_price){
-                current_total = current_total + current_item.discount_price
+                current_total = current_total + (current_item.discount_price * current_item.quantity)
             }else{
-                current_total = current_total + current_item.price
+                current_total = current_total + (current_item.price * current_item.quantity)
             }
         }
 
