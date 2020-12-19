@@ -2,6 +2,7 @@ import React, {useContext, useState, Fragment, useEffect} from 'react';
 import {Intcomma} from "../../utilities";
 import {ShoppingCartContext} from "../contexts/ShoppingCart";
 
+import {UserContext} from "../contexts/UserContext";
 
 function Quantity({quantity, set_quantity}){
     return (
@@ -62,10 +63,51 @@ function CartPage() {
     )
 }
 
-function AddressPage() {
-    return (
-        <h1>Szállítási adatok megadása...</h1>
-    )
+function AddressPage(){
+    const {
+        first_name,
+        set_first_name,
+        last_name,
+        set_last_name,
+        email,
+        set_email,
+        phone,
+        set_phone,
+        zipcode,
+        set_zipcode,
+        city,
+        set_city,
+        address,
+        set_address
+    } = useContext(UserContext)
+
+    useEffect(() => {
+        if(process.env.NODE_ENV === "development"){
+            set_first_name("Kiss")
+            set_last_name("Balázs")
+            set_email("balazs@gmail.com")
+            set_phone("06 20 555 7896")
+            set_zipcode("1234")
+            set_city("Debrecen")
+            set_address("Petőfi utca 1.")
+        }
+    }, [])
+
+    return <div className="address-layout">
+        <h3>Személyes adatok</h3>
+        <input type="text" placeholder="Vezetéknév" value={first_name} onChange={e => set_first_name(e.target.value)}/>
+        <input type="text" placeholder="Keresztnév" value={last_name} onChange={e => set_last_name(e.target.value)}/>
+        <input type="email" placeholder="Email" value={email} onChange={e => set_email(e.target.value)}/>
+        <input type="text" placeholder="Telefon" value={phone} onChange={e => set_phone(e.target.value)}/>
+        <hr/>
+
+        <h3>Szállítási adatok</h3>
+        <input type="text" placeholder="Irányítószám" value={zipcode} onChange={e => set_zipcode(e.target.value)}/>
+        <input type="text" placeholder="Város" value={city} onChange={e => set_city(e.target.value)}/>
+        <input type="text" placeholder="Utca, házszám" value={address} onChange={e => set_address(e.target.value)}/>
+
+        <hr/>
+    </div>
 }
 
 function OverviewPage() {

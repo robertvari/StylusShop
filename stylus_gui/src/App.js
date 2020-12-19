@@ -15,10 +15,12 @@ import Registration from "./components/Registration";
 import Checkout from "./components/shop/Checkout";
 
 import {ShoppingCartProvider} from "./components/contexts/ShoppingCart";
+import {UserProvider} from "./components/contexts/UserContext";
 
 function App() {
   return (
         <Router>
+            <UserProvider>
 
             <ShoppingCartProvider>
 
@@ -38,6 +40,7 @@ function App() {
                 </div>
             </ShoppingCartProvider>
 
+            </UserProvider>
         </Router>
   );
 }
