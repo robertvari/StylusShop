@@ -32,8 +32,7 @@ function CartIcon ({set_visible, shopping_list}){
 }
 
 function ShoppingCart(props) {
-    const {shopping_list, set_shopping_list} = useContext(ShoppingCartContext)
-    const [total, set_total] = useState(0)
+    const {shopping_list, set_shopping_list, total} = useContext(ShoppingCartContext)
     const [visible, set_visible] = useState(false)
     const history = useHistory()
 
@@ -43,29 +42,10 @@ function ShoppingCart(props) {
         set_shopping_list(new_list)
     }
 
-    const calc_total = () => {
-        let current_total = 0
-
-        for(let i=0; i < shopping_list.length; i++){
-            const current_item = shopping_list[i]
-            if(current_item.discount_price){
-                current_total = current_total + current_item.discount_price
-            }else{
-                current_total = current_total + current_item.price
-            }
-        }
-
-        set_total(current_total)
-    }
-
     const go_to_checkout = () => {
         set_visible(false)
         history.push("/checkout")
     }
-
-    useEffect(() =>{
-        calc_total()
-    }, [shopping_list])
 
     return (
         <div className="cart-container">

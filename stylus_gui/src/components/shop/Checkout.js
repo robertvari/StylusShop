@@ -1,11 +1,58 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, Fragment, useEffect} from 'react';
 import {Intcomma} from "../../utilities";
 import {ShoppingCartContext} from "../contexts/ShoppingCart";
 
 
-function CartPage() {
+function Quantity({quantity, set_quantity}){
     return (
-        <h1>Kosár tartalma</h1>
+        <input
+            type="number"
+            value={quantity}
+            onChange={e => set_quantity(parseInt(e.target.value))}
+            min={1}
+        />
+    )
+}
+
+function CheckoutItem({data}){
+    const [quantity, set_quantity] = useState(data.quantity)
+    const {shopping_list, set_shopping_list} = useContext(ShoppingCartContext)
+
+    useEffect(() => {
+        const new_list = [...shopping_list]
+        for(let i=0; i < new_list.length; i++){
+            const item = new_list[i]
+            if(item.id === data.id){
+                item.quantity = quantity
+            }
+        }
+
+        set_shopping_list(new_list)
+        localStorage.setItem("shopping_list", JSON.stringify(new_list))
+    }, [quantity])
+
+    return (
+        <div className="checkout-item-container">
+            <div>{data.title}</div>
+            <div>{Intcomma(data.price)} Ft</div>
+
+            <Quantity quantity={quantity} set_quantity={set_quantity}/>
+        </div>
+    )
+}
+
+function CartPage() {
+    const {shopping_list, total} = useContext(ShoppingCartContext)
+
+    return (
+        <Fragment>
+            {
+                shopping_list.map(data => <CheckoutItem data={data} key={data.id}/>)
+            }
+
+            <h3 className="total">Összesen: {Intcomma(total)} Ft</h3>
+
+        </Fragment>
     )
 }
 
@@ -23,7 +70,7 @@ function OverviewPage() {
 
 function Checkout(props) {
     const {shopping_list, set_shopping_list} = useContext(ShoppingCartContext)
-    const [current_step, set_current_step] = useState(1)
+    const [current_step, set_current_step] = useState(0)
     const steps = ["Kosár", "Szállítási adatok megadás", "Áttekintés"]
 
     return (

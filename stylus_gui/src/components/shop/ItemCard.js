@@ -9,7 +9,9 @@ function ItemCard(props) {
     const [in_cart, set_in_cart] = useState(false)
 
     const add_to_cart = () => {
-        const new_shopping_list = [...shopping_list, props.data]
+        const item_data = props.data
+        item_data.quantity = 1
+        const new_shopping_list = [...shopping_list, item_data]
         localStorage.setItem("shopping_list", JSON.stringify(new_shopping_list))
         set_shopping_list(new_shopping_list)
     }
