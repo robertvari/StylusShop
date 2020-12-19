@@ -110,10 +110,42 @@ function AddressPage(){
     </div>
 }
 
-function OverviewPage() {
-    return (
-        <h1>Áttekintés és fizetés</h1>
-    )
+function OverviewPage(){
+    const {shopping_list, total} = useContext(ShoppingCartContext)
+    const {first_name, last_name, email, phone, zipcode, city, address} = useContext(UserContext)
+
+    return <Fragment>
+        <h3>Szállítási adatok:</h3>
+        <div><small>Név:</small> {first_name} {last_name}</div>
+        <div><small>Email:</small> {email}</div>
+        <div><small>Telefon:</small> {phone}</div>
+        <br/>
+        <div><small>Szállítási cím:</small> {zipcode} {city}, {address}</div>
+
+        <hr/>
+
+        <h3>Kiválasztott termékek:</h3>
+        <br/>
+        {
+            shopping_list.map(data => <div className="checkout-item-container">
+            <div>{data.title}</div>
+            {
+                data.discount_price?
+                    <div> <small className="discount-price">{Intcomma(data.price)} Ft</small> {Intcomma(data.discount_price)} Ft</div>
+                    :
+                    <div>{Intcomma(data.price)} Ft</div>
+            }
+
+            <div>{data.quantity} db</div>
+
+            </div>
+            )
+        }
+
+        <hr/>
+            <h3 className="total">Összesen: {Intcomma(total)} Ft</h3>
+        <hr/>
+    </Fragment>
 }
 
 function Checkout(props) {
