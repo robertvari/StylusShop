@@ -12,7 +12,7 @@ import Contact from "./components/Contact";
 import Login from "./components/Login";
 import PasswordReset from "./components/PasswordReset";
 import Registration from "./components/Registration";
-import Cassa from "./components/Cassa";
+import Checkout from "./components/shop/Checkout";
 
 import {ShoppingCartProvider} from "./components/contexts/ShoppingCart";
 
@@ -28,7 +28,7 @@ function App() {
                 <Switch>
                   <Route path="/contact" component={Contact}/>
                   <Route path="/shop" component={Shop}/>
-                  <Route path="/casa" component={Cassa}/>
+                  <Route path="/checkout" component={Checkout}/>
                   <Route path="/login" component={Login}/>
                   <Route path="/password_reset" component={PasswordReset}/>
                   <Route path="/registration" component={Registration}/>

@@ -1,9 +1,9 @@
 import React,{useContext} from 'react';
-import {Intcomma} from "../utilities";
-import {ShoppingCartContext} from "./contexts/ShoppingCart";
+import {Intcomma} from "../../utilities";
+import {ShoppingCartContext} from "../contexts/ShoppingCart";
 
 
-function Cassa(props) {
+function Checkout(props) {
     const {shopping_list, set_shopping_list} = useContext(ShoppingCartContext)
 
     return (
@@ -15,4 +15,4 @@ function Cassa(props) {
     );
 }
 
-export default Cassa;
+export default Checkout;
