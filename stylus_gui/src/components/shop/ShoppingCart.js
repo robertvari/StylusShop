@@ -1,7 +1,7 @@
 import React, {useContext, useState, useEffect, Fragment} from 'react';
 import {ShoppingCartContext} from "../contexts/ShoppingCart";
 import {Intcomma} from "../../utilities";
-import {Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 function CartItem (props) {
     const {title, price, discount_price, id} = props.data
@@ -35,6 +35,7 @@ function ShoppingCart(props) {
     const {shopping_list, set_shopping_list} = useContext(ShoppingCartContext)
     const [total, set_total] = useState(0)
     const [visible, set_visible] = useState(false)
+    const history = useHistory()
 
     const delete_item = (id) =>{
         const new_list = shopping_list.filter(item => item.id !== id)
@@ -55,6 +56,11 @@ function ShoppingCart(props) {
         }
 
         set_total(current_total)
+    }
+
+    const go_to_checkout = () => {
+        set_visible(false)
+        history.push("/checkout")
     }
 
     useEffect(() =>{
@@ -83,10 +89,8 @@ function ShoppingCart(props) {
                             Vásárlás folytatása
                         </button>
 
-                        <button>
-                            <Link to={"/casa"} onClick={() => set_visible(false)}>
+                        <button onClick={go_to_checkout}>
                                 Pénztár
-                            </Link>
                         </button>
                     </div>
 
