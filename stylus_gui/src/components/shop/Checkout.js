@@ -4,6 +4,11 @@ import {ShoppingCartContext} from "../contexts/ShoppingCart";
 
 import {UserContext} from "../contexts/UserContext";
 
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+import StripeForm from "./StripeForm";
+const stripePromise = loadStripe('pk_test_51HyehYF9rSH7raBvQsbdg02wPMcRm0RtwPGOxBNlB0BNRdzAQIpSeptP48fGtvNBQDAwckdPkJzTMQUPFrlYWkH500JF4oGXW5');
+
 function Quantity({quantity, set_quantity}){
     return (
         <input
@@ -145,8 +150,14 @@ function OverviewPage(){
         <hr/>
             <h3 className="total">Összesen: {Intcomma(total)} Ft</h3>
         <hr/>
+
+        <Elements stripe={stripePromise}>
+            <StripeForm/>
+        </Elements>
     </Fragment>
 }
+
+
 
 function Checkout(props) {
     const {shopping_list, set_shopping_list} = useContext(ShoppingCartContext)
@@ -176,7 +187,7 @@ function Checkout(props) {
 
                 {
                     current_step === 2?
-                        <button>Fizetés</button>
+                        null
                         :
                         <button onClick={() => set_current_step(current_step + 1)}>{steps[current_step + 1]}</button>
                 }
