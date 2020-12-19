@@ -4,6 +4,16 @@
   flex-direction: column;
   margin: 0 auto;
 
+  .stripe-card-form{
+    display: grid;
+    grid-template-columns: auto 100px;
+    grid-gap: 10px;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
   .steps-layout{
     display: flex;
     justify-content: center;

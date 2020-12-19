@@ -40,13 +40,17 @@ class OrderView(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request):
-        price = 200
+        payment_id = request.data.get("payment_id")
+        amount = request.data.get("amount")
+        shopping_list = request.data.get("shopping_list")
+        customer = request.data.get("customer")
 
         payment_intent = stripe.PaymentIntent.create(
-            amount=price * 100,
-            currency="huf",
-            payment_method_types=["card"],
-            receipt_email="test@example.com"
+            amount=amount,
+            currency='huf',
+            payment_method=payment_id,
+            receipt_email=customer["email"],
+            confirm=True
         )
 
         return Response(payment_intent)
