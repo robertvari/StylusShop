@@ -12,7 +12,8 @@ urlpatterns = [
     path('api/v01/auth/registration/account-confirm-email/<key>/', confirm_email),
     path('api/v01/auth/registration/', include('rest_auth.registration.urls')),
 
-    path('api/v01/shop/', include('shop.urls'))
+    path('api/v01/shop/', include('shop.urls')),
+    path('api/v01/users/', include('users.urls'))
 ]
 
 if settings.DEBUG:

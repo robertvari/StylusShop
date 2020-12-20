@@ -48,6 +48,49 @@ export const UserProvider = (props) => {
         }
     }
 
+    const fetch_user = async () => {
+        const res = await axios({
+            method: "get",
+            url: `${API_URL}users/profile/`,
+            headers: {
+                authorization: `token ${logged_in}`
+            }
+        })
+
+        const {profile} = res.data
+        set_first_name(profile.first_name)
+        set_last_name(profile.last_name)
+        set_email(res.data.email)
+        set_phone(profile.phone)
+        set_zipcode(profile.zipcode)
+        set_city(profile.city)
+        set_address(profile.address)
+    }
+
+    const update_profile = () => {
+        axios({
+            method: "patch",
+            url: `${API_URL}users/profile/`,
+            headers : {
+                authorization: `token ${logged_in}`
+            },
+            data: {
+                first_name: first_name,
+                last_name: last_name,
+                phone: phone,
+                zipcode: zipcode,
+                city: city,
+                address: address
+            }
+        })
+    }
+
+    useEffect(() => {
+        if(logged_in){
+            fetch_user()
+        }
+    }, [logged_in])
+
     return (
         <UserContext.Provider value={{
             first_name: first_name,
@@ -74,7 +117,8 @@ export const UserProvider = (props) => {
             logged_in: logged_in,
             check_token: check_token,
             log_in_user: log_in_user,
-            error: error
+            error: error,
+            update_profile: update_profile
         }}>
 
             {props.children}
