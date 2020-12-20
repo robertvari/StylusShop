@@ -16,6 +16,7 @@ import Checkout from "./components/shop/Checkout";
 import Success from "./components/shop/Success";
 import Profile from "./components/users/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
+import EmailConfirmSent from "./components/EmailConfirmSent";
 
 import {ShoppingCartProvider} from "./components/contexts/ShoppingCart";
 import {UserProvider} from "./components/contexts/UserContext";
@@ -38,6 +39,7 @@ function App() {
                   <Route path="/password_reset" component={PasswordReset}/>
                   <Route path="/registration" component={Registration}/>
                   <Route path="/payment_success" component={Success}/>
+                  <Route path="/users/email_confirm_sent" component={EmailConfirmSent}/>
 
                   <ProtectedRoute path="/profile" component={Profile}/>
 
