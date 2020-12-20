@@ -86,17 +86,6 @@ function AddressPage(){
         set_address
     } = useContext(UserContext)
 
-    useEffect(() => {
-        if(process.env.NODE_ENV === "development"){
-            set_first_name("Kiss")
-            set_last_name("Balázs")
-            set_email("balazs@gmail.com")
-            set_phone("06 20 555 7896")
-            set_zipcode("1234")
-            set_city("Debrecen")
-            set_address("Petőfi utca 1.")
-        }
-    }, [])
 
     return <div className="address-layout">
         <h3>Személyes adatok</h3>

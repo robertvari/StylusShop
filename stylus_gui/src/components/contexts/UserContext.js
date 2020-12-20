@@ -85,6 +85,20 @@ export const UserProvider = (props) => {
         })
     }
 
+    const log_out_user = async () =>{
+        await axios({
+            method: "post",
+            url: `${API_URL}auth/logout/`,
+            headers : {
+                authorization: `token ${logged_in}`
+            },
+        })
+
+        removeCookies("token", {path: "/"})
+        set_logged_in(null)
+        history.push("/")
+    }
+
     useEffect(() => {
         if(logged_in){
             fetch_user()
@@ -118,7 +132,8 @@ export const UserProvider = (props) => {
             check_token: check_token,
             log_in_user: log_in_user,
             error: error,
-            update_profile: update_profile
+            update_profile: update_profile,
+            log_out_user: log_out_user
         }}>
 
             {props.children}

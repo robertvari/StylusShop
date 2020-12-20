@@ -1,8 +1,17 @@
-import React from 'react';
+import React, {useContext, useEffect, Fragment} from 'react';
 import {Link} from "react-router-dom";
 import ShoppingCart from "./shop/ShoppingCart";
 
+import {UserContext} from "./contexts/UserContext";
+
+
 function Navbar(props) {
+    const {logged_in, log_out_user, check_token} = useContext(UserContext)
+
+    useEffect(() => {
+        check_token()
+    }, [])
+
     return (
         <div className="navbar">
             <div className="nav-button-layout">
@@ -16,9 +25,20 @@ function Navbar(props) {
 
                 <ShoppingCart/>
 
-                <Link to="/login">
-                    <i className="fas fa-user nav-button"/>
-                </Link>
+                {
+                    logged_in?
+                        <Fragment>
+                            <Link to="/profile">
+                                <i className="fas fa-user nav-button"/>
+                            </Link>
+
+                            <i className="fas fa-sign-out-alt nav-button" onClick={() => log_out_user()}/>
+                        </Fragment>
+                        :
+                        <Link to="/login">
+                            <i className="fas fa-user nav-button"/>
+                        </Link>
+                }
 
             </div>
         </div>
