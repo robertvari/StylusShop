@@ -13,6 +13,7 @@ import Login from "./components/Login";
 import PasswordReset from "./components/PasswordReset";
 import Registration from "./components/Registration";
 import Checkout from "./components/shop/Checkout";
+import Success from "./components/shop/Success";
 
 import {ShoppingCartProvider} from "./components/contexts/ShoppingCart";
 import {UserProvider} from "./components/contexts/UserContext";
@@ -34,6 +35,7 @@ function App() {
                   <Route path="/login" component={Login}/>
                   <Route path="/password_reset" component={PasswordReset}/>
                   <Route path="/registration" component={Registration}/>
+                  <Route path="/payment_success" component={Success}/>
 
                   <Route path="/" component={Home}/>
                 </Switch>

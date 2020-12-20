@@ -49,17 +49,17 @@ class OrderView(APIView):
         shopping_list = request.data.get("shopping_list")
         customer = request.data.get("customer")
 
-        # payment_intent = stripe.PaymentIntent.create(
-        #     amount=amount,
-        #     currency='huf',
-        #     payment_method=payment_id,
-        #     receipt_email=customer["email"],
-        #     confirm=True
-        # )
+        payment_intent = stripe.PaymentIntent.create(
+            amount=amount,
+            currency='huf',
+            payment_method=payment_id,
+            receipt_email=customer["email"],
+            confirm=True
+        )
 
-        payment_intent = {
-            "status": "succeeded"
-        }
+        # payment_intent = {
+        #     "status": "succeeded"
+        # }
 
         if payment_intent.get("status") == "succeeded":
             self.customer = customer

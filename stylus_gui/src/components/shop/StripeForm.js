@@ -1,24 +1,29 @@
-import React,{useContext} from 'react';
+import React,{useContext, useState} from 'react';
 import axios from "axios"
 import {UserContext} from "../contexts/UserContext";
 import {ShoppingCartContext} from "../contexts/ShoppingCart";
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
-
+import PulseLoader from 'react-spinners/PulseLoader'
+import {useHistory} from 'react-router-dom'
 
 const StripeForm = () => {
   const API_URL = process.env.REACT_APP_API_URL
   const {first_name, last_name, email, phone, zipcode, city, address} = useContext(UserContext)
-  const {shopping_list, total} = useContext(ShoppingCartContext)
+  const {shopping_list, set_shopping_list, total} = useContext(ShoppingCartContext)
+  const [waiting, set_waiting] = useState(false)
   const stripe = useStripe();
   const elements = useElements();
+  const history = useHistory()
 
   const handleSubmit = async (event) => {
     // Block native form submission.
     event.preventDefault();
+    set_waiting(true)
 
     if (!stripe || !elements) {
       // Stripe.js has not loaded yet. Make sure to disable
       // form submission until Stripe.js has loaded.
+      set_waiting(false)
       return;
     }
 
@@ -45,6 +50,7 @@ const StripeForm = () => {
     });
 
     if (error) {
+      set_waiting(false)
       console.log('[error]', error);
     } else {
       // send order with payment ID to API
@@ -70,6 +76,12 @@ const StripeForm = () => {
         }
       })
 
+      if(res.data.status === 'succeeded'){
+        set_waiting(false)
+        set_shopping_list([])
+        localStorage.setItem('shopping_list', JSON.stringify([]))
+        history.push('/payment_success')
+      }
     }
   };
 
@@ -80,9 +92,17 @@ const StripeForm = () => {
             hidePostalCode: true
           }}
       />
-      <button type="submit" disabled={!stripe} className="pay-button">
-        Fizetés
-      </button>
+      {
+        waiting?
+            <PulseLoader
+              size={16}
+              color={'#81d463'}
+            />
+            :
+            <button type="submit" disabled={!stripe} className="pay-button">
+              Fizetés
+            </button>
+      }
     </form>
   );
 };

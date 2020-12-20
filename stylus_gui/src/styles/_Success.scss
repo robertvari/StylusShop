@@ -1,0 +1,18 @@
+.success-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 50px;
+
+  h1{
+    color: #81d463;
+    font-weight: 300;
+  }
+}
