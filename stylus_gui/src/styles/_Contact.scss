@@ -27,4 +27,9 @@
     font-size: 50px;
     color: #e9ebee;
   }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 }

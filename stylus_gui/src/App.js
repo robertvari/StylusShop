@@ -14,6 +14,8 @@ import PasswordReset from "./components/PasswordReset";
 import Registration from "./components/Registration";
 import Checkout from "./components/shop/Checkout";
 import Success from "./components/shop/Success";
+import Profile from "./components/users/Profile";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 import {ShoppingCartProvider} from "./components/contexts/ShoppingCart";
 import {UserProvider} from "./components/contexts/UserContext";
@@ -36,6 +38,8 @@ function App() {
                   <Route path="/password_reset" component={PasswordReset}/>
                   <Route path="/registration" component={Registration}/>
                   <Route path="/payment_success" component={Success}/>
+
+                  <ProtectedRoute path="/profile" component={Profile}/>
 
                   <Route path="/" component={Home}/>
                 </Switch>
